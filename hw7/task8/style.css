@@ -1,0 +1,21 @@
+.container {
+  padding: 0.5rem;
+  max-width: 400px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
+.message {
+  display: flex;
+  align-items: start;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: rgba(32, 38, 227, 0.4);
+  border-radius: 0.5rem;
+}
+.close {
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+  background-color: rgba(232, 113, 113, 0.6);
+}

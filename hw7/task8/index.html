@@ -7,6 +7,22 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div id="container" class="container">
+      <h2>Зачем использовать делегирование:</h2>
+      <div class="message">
+        Упрощает процесс инициализации и экономит память: не нужно вешать много обработчиков.
+        <button class="close">X</button>
+      </div>
+      <div class="message">
+        Меньше кода: при добавлении и удалении элементов не нужно ставить или снимать обработчики.
+        <button class="close">X</button>
+      </div>
+      <div class="message">
+        Удобство изменений DOM: можно массово добавлять или удалять элементы путём изменения
+        innerHTML и ему подобных.
+        <button class="close">X</button>
+      </div>
+    </div>
     <script src="./index.js"></script>
   </body>
 </html>
