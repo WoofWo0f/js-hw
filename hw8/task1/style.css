@@ -1,0 +1,35 @@
+.userform {
+  width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.name {
+}
+.surname {
+}
+.age {
+}
+.submit {
+}
+.error {
+  width: 400px;
+  background-color: red;
+  margin: 20px auto;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  visibility: hidden;
+}
+.usertable {
+  text-align: center;
+  width: 1000px;
+  margin: auto;
+  border: 1px solid black;
+}
+.delete-button {
+  display: block;
+  width: 100px;
+  margin: 20px auto;
+}
