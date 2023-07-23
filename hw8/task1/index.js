@@ -12,17 +12,17 @@ submitButton.addEventListener("click", function (event) {
   const userSurame = document.querySelector(".surname");
   const userAge = document.querySelector(".age");
 
+  if (userName.value === "" || userSurame.value === "" || userAge.value === "") {
+    errorMessage.style.visibility = "visible";
+    return;
+  }
+
   const user = {
     id: Date.now(),
     name: userName.value,
     surname: userSurame.value,
     age: userAge.value,
   };
-
-  if (user.name === "" || user.surname === "" || user.age === "") {
-    errorMessage.style.visibility = "visible";
-    return;
-  }
 
   data.push(user);
 
@@ -44,7 +44,6 @@ submitButton.addEventListener("click", function (event) {
 
 deleteAllButton.addEventListener("click", function () {
   userTable.innerHTML = "";
-  userId = 0;
   data = [];
 });
 console.log(data);
