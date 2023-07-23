@@ -1,0 +1,50 @@
+.todo-form {
+  width: 500px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 2px solid black;
+  padding: 10px;
+}
+.title {
+}
+.description {
+}
+.submit-button {
+  align-self: center;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: auto;
+  gap: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  background-color: gray;
+}
+
+.todo-task {
+  list-style-type: none;
+  border: 1px solid black;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.todo-task p {
+  margin: 5px;
+}
+
+.task-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.button {
+  width: 200px;
+}

@@ -29,7 +29,7 @@ submitButton.addEventListener("click", function (event) {
   userTable.innerHTML = "";
 
   data.forEach((item, index) => {
-    userTable.innerHTML += `<tr class="newUser" id=${item.id}>
+    userTable.innerHTML += `<tr id=${item.id}>
   <td>${index + 1}</td>
   <td>${item.name}</td>
   <td>${item.surname}</td>
