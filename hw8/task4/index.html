@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <form class="employee-form">
+      <input type="text" class="name" placeholder="Name" />
+      <input type="text" class="surname" placeholder="Surname" />
+      <input type="number" class="salary" placeholder="Salary" />
+      <input type="date" class="hire-date" placeholder="Hire Date" />
+      <button class="save-btn btn">SAVE</button>
+    </form>
+    <table class="employee-list">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>
+            Salary <button class="salary-from-smallest">↓</button
+            ><button class="salary-from-largest">↑</button>
+          </th>
+          <th>
+            Hire Date <button class="hire-date-from-smallest">↓</button
+            ><button class="hire-date-from-largest">↑</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div class="table-buttons">
+      <button class="fire-all-btn btn">Fire all</button>
+      <button class="fire-btn btn">Fire</button>
+      <button class="edit-btn btn">Edit</button>
+    </div>
+    <div class="popup">
+      <div class="popup-content">
+        <h5>EDIT</h5>
+        <input type="text" class="edit-name" placeholder="Name" />
+        <input type="text" class="edit-surname" placeholder="Surname" />
+        <input type="number" class="edit-salary" placeholder="Salary" />
+        <input type="date" class="edit-hire-date" placeholder="Hire Date" />
+        <button class="change-btn btn">SAVE</button>
+        <button class="cancel-btn btn">CANCEL</button>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
