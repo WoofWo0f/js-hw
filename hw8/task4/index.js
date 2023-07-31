@@ -1,8 +1,11 @@
-let data = [];
+const dataFromStorage = localStorage.getItem("data");
+const parsedData = JSON.parse(dataFromStorage);
+let data = parsedData?.length ? parsedData : [];
+
 const employeeForm = document.querySelector(".employee-form");
 const saveBtn = document.querySelector(".save-btn");
 
-const employeeList = document.querySelector(".employee-list tbody");
+const employeeList = document.querySelector(".employee-list");
 const fireAllBtn = document.querySelector(".fire-all-btn");
 const fireBtn = document.querySelector(".fire-btn");
 const editBtn = document.querySelector(".edit-btn");
@@ -20,19 +23,8 @@ const salaryFromLargest = document.querySelector(".salary-from-largest");
 const hireDateFromSmallest = document.querySelector(".hire-date-from-smallest");
 const hireDateFromLargest = document.querySelector(".hire-date-from-largest");
 
-const openEditPopup = function (employee) {
-  popup.dataset.employeeId = employee.id;
+const banner = document.querySelector(".banner");
 
-  editName.value = employee.name;
-  editSurname.value = employee.surname;
-  editSalary.value = employee.salary;
-  editHireDate.value = employee.hireDate;
-  popup.classList.add("open");
-};
-
-const closeEditPopup = function () {
-  popup.classList.remove("open");
-};
 const updateEmployeeList = function () {
   employeeList.innerHTML = "";
   data.forEach((item) => {
@@ -48,7 +40,23 @@ const updateEmployeeList = function () {
   });
 };
 
-saveBtn.addEventListener("click", function (event) {
+updateEmployeeList();
+
+const openEditPopup = function (employee) {
+  popup.dataset.employeeId = employee.id;
+
+  editName.value = employee.name;
+  editSurname.value = employee.surname;
+  editSalary.value = employee.salary;
+  editHireDate.value = employee.hireDate;
+  popup.classList.add("open");
+};
+
+const closeEditPopup = function () {
+  popup.classList.remove("open");
+};
+
+employeeForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   const name = document.querySelector(".name");
@@ -66,6 +74,7 @@ saveBtn.addEventListener("click", function (event) {
 
   data.push(employee);
   updateEmployeeList();
+  localStorage.setItem("data", JSON.stringify(data));
 });
 
 fireAllBtn.addEventListener("click", function () {
@@ -80,6 +89,7 @@ fireBtn.addEventListener("click", function () {
 
   data = data.filter((item) => !employeesToFire.includes(item.id));
   updateEmployeeList();
+  localStorage.setItem("data", JSON.stringify(data));
 });
 
 editBtn.addEventListener("click", function () {
@@ -104,6 +114,7 @@ changeBtn.addEventListener("click", function () {
 
   closeEditPopup();
   updateEmployeeList();
+  localStorage.setItem("data", JSON.stringify(data));
 });
 
 cancelBtn.addEventListener("click", closeEditPopup);
@@ -111,19 +122,27 @@ cancelBtn.addEventListener("click", closeEditPopup);
 salaryFromSmallest.addEventListener("click", function () {
   data.sort((a, b) => a.salary - b.salary);
   updateEmployeeList();
+  localStorage.setItem("data", JSON.stringify(data));
 });
 
 salaryFromLargest.addEventListener("click", function () {
   data.sort((a, b) => b.salary - a.salary);
   updateEmployeeList();
+  localStorage.setItem("data", JSON.stringify(data));
 });
 
 hireDateFromSmallest.addEventListener("click", function () {
   data.sort((a, b) => new Date(a.hireDate) - new Date(b.hireDate));
   updateEmployeeList();
+  localStorage.setItem("data", JSON.stringify(data));
 });
 
 hireDateFromLargest.addEventListener("click", function () {
   data.sort((a, b) => new Date(b.hireDate) - new Date(a.hireDate));
   updateEmployeeList();
+  localStorage.setItem("data", JSON.stringify(data));
 });
+
+setTimeout(() => {
+  banner.classList.add("hidden");
+}, 5000);
